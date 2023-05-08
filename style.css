@@ -340,12 +340,27 @@ header ul li:hover a {
     height: 3.6rem;
   }
 }
-
 /* Now, make it reponsive */
 @media (max-width: 900px) {
   header {
     padding: 20px 50px;
   }
+  #home {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("imagen-prog.jpg");
+    background-color: rgba(30, 30, 30);
+    background-blend-mode: soft-light;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px;
+  }
+
   #home {
     padding: 150px 50;
     flex-direction: column;
