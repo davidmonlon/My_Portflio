@@ -326,6 +326,18 @@ header ul li:hover a {
   transform: translate(-50%, -50%) scale(1);
 }
 
+/* Scroll personalizado */
+
+body::-webkit-scrollbar {
+  width: 7px;
+  background: #222;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #7495fa;
+  border-radius: 7px;
+}
+
 @keyframes popup {
   0% {
     width: 0rem;
