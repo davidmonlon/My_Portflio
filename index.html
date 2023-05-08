@@ -2,6 +2,12 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
     <title>Responsive Portfolio Website</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
@@ -121,10 +127,15 @@
         <p class="copyrights">
           Developed and designed by David Montenegro. ©2021. All rights
           reserved. <br />
-          <a href="#home">Ir al inicio</a>
         </p>
       </div>
     </section>
+
+    <div class="go-top-container">
+      <div class="go-top-button">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+    </div>
 
     <!--Codigo Javascript-->
     <script
@@ -147,6 +158,23 @@
       let header = document.querySelector("header");
       menuToggle.onclick = function () {
         header.classList.toggle("active");
+      };
+
+      window.onscroll = function () {
+        if (document.documentElement.scrollTop > 1968) {
+          document.querySelector(".go-top-container").classList.add("show");
+        } else {
+          document.querySelector(".go-top-container").classList.remove("show");
+        }
+
+        document
+          .querySelector(".go-top-container")
+          .addEventListener("click", () => {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          });
       };
     </script>
   </body>

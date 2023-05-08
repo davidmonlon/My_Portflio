@@ -274,11 +274,75 @@ header ul li:hover a {
   padding-bottom: 0;
   position: relative;
   color: #aaa;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 .copyrights a {
   color: #7495fa;
+}
+
+/* GOTOP */
+
+.go-top-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3.6rem;
+  height: 3.6rem;
+  z-index: -1;
+}
+
+.go-top-button {
+  width: 0rem;
+  height: 0rem;
+  background: #0565dc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.go-top-button i {
+  position: absolute;
+  font-size: 1.7rem;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: #fff;
+  transition: 0.3s;
+}
+
+.show {
+  z-index: 10;
+}
+
+.show .go-top-button {
+  animation: popup 0.3s ease-in-out;
+  width: 3.6rem;
+  height: 3.6rem;
+  z-index: 11;
+}
+
+.show i {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@keyframes popup {
+  0% {
+    width: 0rem;
+    height: 0rem;
+  }
+  50% {
+    width: 4rem;
+    height: 4rem;
+  }
+  100% {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
 }
 
 /* Now, make it reponsive */
@@ -391,5 +455,39 @@ header ul li:hover a {
   }
   #contact .contect a {
     height: 70px;
+  }
+}
+
+/* Now, make it reponsive GOTOP */
+
+@media screen and (max-width: 700px) {
+  .go-top-container {
+    bottom: 1rem;
+    right: -2rem;
+  }
+  .go-top-button {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  .go-top-button i {
+    font-size: 1.3rem;
+  }
+  .show .go-top-button {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  @keyframes popup {
+    0% {
+      width: 0rem;
+      height: 0rem;
+    }
+    50% {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+    100% {
+      width: 2.8rem;
+      height: 2.8rem;
+    }
   }
 }
